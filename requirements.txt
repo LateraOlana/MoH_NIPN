@@ -1,4 +1,4 @@
-import streamlit as st
+install streamlit
 import numpy as np
 import pandas
 import sklearn
