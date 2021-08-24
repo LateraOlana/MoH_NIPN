@@ -1,5 +1,5 @@
 streamlit
-import numpy as np
-import pandas
-import sklearn
-import matplotlib.pyplot as plt
+numpy
+pandas
+sklearn
+matplotlib
