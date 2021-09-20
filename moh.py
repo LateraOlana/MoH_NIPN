@@ -100,8 +100,7 @@ with col0:
         df_w = pandas.read_csv("wasting.csv")
         df_u = pandas.read_csv("underweight.csv")
         df_a = pandas.read_csv("anemia.csv")
-        X = df[['EI', 'CF', 'EBF', 'YCA', 'YCA_MMF', 'FBF', 'ASF', 'ISH', 'FV', 'FP', 'IWS', 'WOP_L30', 'HH_BSF', 'HSF',
-                'IRF', 'VAF', 'WL', 'ISF', 'ISW']]
+        X = df[['EI', 'CF', 'EBF', 'YCA', 'YCA_MMF', 'FBF', 'ASF', 'ISH', 'FV', 'FP', 'IWS', 'WOP_L30', 'HH_BSF','IRF', 'VAF', 'WL', 'ISF', 'ISW']]
 
         y = df['Stunting']
         y_w = df_w['Wasting']
@@ -125,9 +124,9 @@ with col0:
         lin2_u.fit(X_poly, y_u)
         # lin2_a.fit(X_poly, y_a)
         print("results")
-        predictedU5 = lin2.predict(poly.fit_transform([[100, 98, 95, 75, 90, 35, 73.1, 95, 85, 82, 73,100, 100, 77, 90, 100, 100, 100, 100]]))
-        predictedU5_w = lin2_w.predict(poly_w.fit_transform([[100, 98, 95, 75, 90, 35, 73.1, 95, 85, 82, 73,100, 100, 77, 90, 100, 100, 100, 100]]))
-        predictedU5_u = lin2_u.predict(poly_u.fit_transform([[100, 98, 95, 75, 90, 35, 73.1, 95, 85, 82, 73,100, 100, 77, 90, 100, 100, 100, 100]]))
+        predictedU5 = lin2.predict(poly.fit_transform([[100, 98, 95, 75, 90, 35, 73.1, 95, 85, 82, 73,100, 100, 90, 100, 100, 100, 100]]))
+        predictedU5_w = lin2_w.predict(poly_w.fit_transform([[100, 98, 95, 75, 90, 35, 73.1, 95, 85, 82, 73,100, 100,  90, 100, 100, 100, 100]]))
+        predictedU5_u = lin2_u.predict(poly_u.fit_transform([[100, 98, 95, 75, 90, 35, 73.1, 95, 85, 82, 73,100, 100,  90, 100, 100, 100, 100]]))
         # predictedU5_a = lin2_a.predict(poly_a.fit_transform([[72.00,69.00,58.80,13.50,55.10,4.80,3.90,89.30,18.20,28.80,19.80,56.90,10.20,53.40,24.20,39.40,47.60]]))
         print(predictedU5)
         print(predictedU5_w)
@@ -149,7 +148,7 @@ with col0:
             number14 = st.slider("Households with an Improved Water Source(IWS) ", 4.7, 100.0)
             number15 = st.slider("Water and Sanitation: Source of drinking water(WOP_L30)", 18.1, 100.0)
             number16 = st.slider("Households with Basic Sanitation Facility(HH_BSF)", 0.3, 100.0)
-            number17 = st.slider("Household with Sanitation Facility", 17.4, 100.0)
+            # number17 = st.slider("Household with Sanitation Facility", 17.4, 100.0)
             number18 = st.slider("Iron Rich Foods(IRF)", 6.4, 100.0)
             number19 = st.slider("Vitamin A Foods(VAF)", 0.3, 100.0)
             number20 = st.slider("Women Literate(WL)", 24.4, 100.0)
@@ -159,15 +158,15 @@ with col0:
 
             predictedU5 = lin2.predict(poly.fit_transform([[number3, number4, number5, number6, number7, number8,
                                                             number9, number11, number12, number13, number14, number15,
-                                                            number16, number17, number18, number19, number20, number10,
+                                                            number16,  number18, number19, number20, number10,
                                                             number1]]))
             predictedU5_w = lin2_w.predict(poly_w.fit_transform([[number3, number4, number5, number6, number7, number8,
                                                                   number9, number11, number12, number13, number14,
-                                                                  number15, number16, number17, number18, number19,
+                                                                  number15, number16,  number18, number19,
                                                                   number20, number10, number1]]))
             predictedU5_u = lin2_u.predict(poly_u.fit_transform([[number3, number4, number5, number6, number7, number8,
                                                                   number9, number11, number12, number13, number14,
-                                                                  number15, number16, number17, number18, number19,
+                                                                  number15, number16, number18, number19,
                                                                   number20, number10, number1]]))
             if predictedU5[0] <= 0:
                 predictedU5[0] = 'NaN'
