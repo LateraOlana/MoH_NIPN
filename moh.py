@@ -210,14 +210,14 @@ with col0:
         # predictedU5_u = lin2_u.predict(poly_u.fit_transform([[90.0,90.0,85.0,70.0,85.0,35.0,53.1,100.0,65.0,62.0,53.0,97.0,46.2,70.0,85.0,74.6,64.5,90.0]]))
 
         # 2030 p1
-        # predictedU5 = lin2.predict(poly.fit_transform([[86.0,87.0,83.0,60.0,70.0,25.0,40.0,93.3,50.0,53.0,43.0,91.0,37.2,55.0,70.0,65.6,52.5,81.0]]))
-        # predictedU5_w = lin2_w.predict(poly_w.fit_transform([[86.0,87.0,83.0,60.0,70.0,25.0,40.0,93.3,50.0,53.0,43.0,91.0,37.2,55.0,70.0,65.6,52.5,81.0]]))
-        # predictedU5_u = lin2_u.predict(poly_u.fit_transform([[86.0,87.0,83.0,60.0,70.0,25.0,40.0,93.3,50.0,53.0,43.0,91.0,37.2,55.0,70.0,65.6,52.5,81.0]]))
-        #
-        # # predictedU5_a = lin2_a.predict(poly_a.fit_transform([[72.00,69.00,58.80,13.50,55.10,4.80,3.90,89.30,18.20,28.80,19.80,56.90,10.20,53.40,24.20,39.40,47.60]]))
-        # print(predictedU5)
-        # print(predictedU5_w)
-        # print(predictedU5_u)
+        predictedU5 = lin2.predict(poly.fit_transform([[86.0,87.0,83.0,60.0,70.0,25.0,40.0,93.3,50.0,53.0,43.0,91.0,37.2,55.0,70.0,65.6,52.5,81.0]]))
+        predictedU5_w = lin2_w.predict(poly_w.fit_transform([[86.0,87.0,83.0,60.0,70.0,25.0,40.0,93.3,50.0,53.0,43.0,91.0,37.2,55.0,70.0,65.6,52.5,81.0]]))
+        predictedU5_u = lin2_u.predict(poly_u.fit_transform([[86.0,87.0,83.0,60.0,70.0,25.0,40.0,93.3,50.0,53.0,43.0,91.0,37.2,55.0,70.0,65.6,52.5,81.0]]))
+
+        # predictedU5_a = lin2_a.predict(poly_a.fit_transform([[72.00,69.00,58.80,13.50,55.10,4.80,3.90,89.30,18.20,28.80,19.80,56.90,10.20,53.40,24.20,39.40,47.60]]))
+        print(predictedU5)
+        print(predictedU5_w)
+        print(predictedU5_u)
         with col1:
             number3 = st.slider("Ealy Initiation(EI)", 47.4, 100.0)
             number4 = st.slider("Complimentary Food(CF)", 36.5, 100.0)
