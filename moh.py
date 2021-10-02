@@ -96,7 +96,9 @@ col2 = st.sidebar
 
 buffer,col3 = st.columns([1,100])
 with col0:
-    select = st.selectbox('Select Analysis:',('National','Tigray'	,'Afar',	'Amhara',	'Oromia',	'Somali',	'Benishangul-Gumuz',	'SNNP',	'Gambella',	'Harari',	'Dire Dawa',	'Addis Ababa'))
+    # select = st.selectbox('Select Analysis:',('National','Tigray'	,'Afar',	'Amhara',	'Oromia',	'Somali',	'Benishangul-Gumuz',	'SNNP',	'Gambella',	'Harari',	'Dire Dawa',	'Addis Ababa'))
+    select = st.selectbox('Select Analysis:',('National'))
+
     if select == 'National':
         df = pandas.read_csv("stunting.csv")
         df_w = pandas.read_csv("wasting.csv")
@@ -275,7 +277,7 @@ with col0:
             # plt.savefig('c.png')
             source = pd.DataFrame({
                 'a': ['Stunting', 'Wasting', 'Under-weight'],
-                'b': [predictedU5[0], predictedU5_w[0], predictedU5_u[0]]
+                'b': [round(predictedU5[0],2), round(predictedU5_w[0],2), round(predictedU5_u[0],2)]
             })
 
             bars = alt.Chart(source).mark_bar().encode(
